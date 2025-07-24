@@ -180,8 +180,8 @@
             </button>
             
             <div class="demo-note">
-                <strong>⚠️ 데모 모드</strong>
-                실제 카카오 키를 설정하면 진짜 로그인이 가능합니다.
+                <strong>✅ 카카오 로그인 설정 완료</strong>
+                실제 카카오 키가 설정되어 진짜 로그인이 가능합니다.
             </div>
         </div>
         
@@ -196,8 +196,8 @@
     </div>
 
     <script>
-        // 카카오 SDK 초기화 (실제 JavaScript 키로 교체 필요)
-        const KAKAO_JS_KEY = 'YOUR_KAKAO_JAVASCRIPT_KEY'; // 여기에 실제 키 입력
+        // 카카오 SDK 초기화
+        const KAKAO_JS_KEY = 'zSAyxA2p9WprSnoIXmMb55yR0mx2Q6uO'; // 카카오 JavaScript 키
         
         // 현재 카카오 SDK 로드 상태 확인
         if (typeof Kakao !== 'undefined') {
@@ -220,10 +220,8 @@
         
         // 카카오 로그인
         function kakaoLogin() {
-            if (typeof Kakao === 'undefined' || KAKAO_JS_KEY === 'YOUR_KAKAO_JAVASCRIPT_KEY') {
-                // 데모 모드
-                showStatus('데모 모드: 실제 카카오 키를 설정해주세요', 'error');
-                demoLogin();
+            if (typeof Kakao === 'undefined') {
+                showStatus('카카오 SDK를 불러올 수 없습니다', 'error');
                 return;
             }
             
